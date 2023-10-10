@@ -114,25 +114,13 @@ def validate(fn):
 
   check_tile_part(f, main_header_len, main_header_len, tile_parts_len[0])
 
-  # for (p1, p2) in trigger_positions(main_header_len, main_header_len, tile_parts_len[0]):
-  #   if  read_byte(f, p1) == 0xFF and read_byte(f, p2) == 0xFF:
-  #     raise Exception(f"0xFFFF detected at offset {p1}")
-
   # main_header + tile_part_2
 
   check_tile_part(f, main_header_len, main_header_len + tile_parts_len[0], tile_parts_len[1])
 
-  # for (p1, p2) in trigger_positions(main_header_len, main_header_len + tile_parts_len[0], tile_parts_len[1]):
-  #   if  read_byte(f, p1) == 0xFF and read_byte(f, p2) == 0xFF:
-  #     raise Exception(f"0xFFFF detected at offset {p1}")
-
   # main_header + tile_part_2
 
   check_tile_part(f, main_header_len, main_header_len + tile_parts_len[0] + tile_parts_len[1], tile_parts_len[2])
-
-  # for (p1, p2) in trigger_positions(main_header_len, main_header_len + tile_parts_len[0] + tile_parts_len[1], tile_parts_len[2]):
-  #   if  read_byte(f, p1) == 0xFF and read_byte(f, p2) == 0xFF:
-  #     raise Exception(f"0xFFFF detected at offset {p1}")
 
 if __name__ == "__main__":
     validate(sys.argv[1])
