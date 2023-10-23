@@ -1,0 +1,1 @@
+Pure Python script that validates JPEG 2000 codestreams against Compatibility Note 1.
